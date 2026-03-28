@@ -1,0 +1,42 @@
+n= 7
+arr=[4, 5, 5, 0, 6, 4, 4]
+
+t = int(input())
+
+for _ in range(t):
+  n = int(input())
+  arr = list(map(int, input().split()))  
+  
+  sum = 0
+  for i in range(n):
+    sum=sum+arr[i]
+  val = sum//n
+  
+  rest = 0
+  for i in range(n):
+    if(rest<0):
+      break
+    if(arr[i]>val):
+      rest = rest+(arr[i]-val)
+      arr[i] = arr[i]-(arr[i]-val)
+    elif(arr[i]<val):
+      rest = rest-(val-arr[i])
+      arr[i] = arr[i]+(val-arr[i])
+  if(rest==0 and arr.count(val)==n):
+    print("YES")
+  else:
+    print("NO")
+    """  
+  for i in range(n):
+    for j in range(i,n):
+      if(arr[i]<=val):
+        break
+      elif(arr[j]<arr[i]):
+        rest = min(arr[i]-val, val-arr[j])
+        arr[i]=arr[i]-rest
+        arr[j]=arr[j]+rest
+  if(arr.count(val)==n):
+    print("YES")
+  else:
+    print("NO")
+    """
