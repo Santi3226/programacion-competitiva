@@ -1,0 +1,40 @@
+arr = [1,2,3,4,5]
+x=3
+
+#Binaria -- O(N)
+for i in range(len(arr)):
+    if(arr[i]==x):
+        print(i)
+
+#Dico false sin verificar (mi metodo) -- O(logN)
+bajo=0
+alto=len(arr)
+while(True):
+    medio= (alto+bajo)//2
+    if(arr[medio]==x):
+        print(medio)
+        break
+    elif(arr[medio]>x):
+        alto=medio
+    else:
+        bajo=medio
+
+#Dico con predicado (metodo profe) -- O(logN)
+N=len(arr)
+a=-1
+while(b-a>1):
+    c= (a+b)//2
+    if(arr[c]>=x):
+        b=c
+    else:
+        a=c
+if(b<N and A[b]==x):        
+    print(b)
+else:
+    print(-1)
+
+#Dico true
+"""
+Dado un predicado monotono ordenado P (funcion que devuelve 0 y 1), quiero buscar el primer 1 y ultimo 0
+Imaginando que mi arreglo contiene un index arr[-1]==-inf y arr[n+1]==inf
+"""
