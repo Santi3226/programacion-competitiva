@@ -1,0 +1,26 @@
+n=8
+k=5
+arr = [0,10,0,0]
+clasificados=[]
+
+arr.sort(reverse=True)
+i=0
+flag=True
+
+if(arr[i]<6):
+  print(0)
+  exit(0)
+while(i<k or flag):
+  if(i<k and arr[i]>=6):
+    print("1ra")
+    clasificados.append(arr[i])
+    i=i+1
+  elif(clasificados[i-1]==arr[i]):
+    print("2da")
+    clasificados.append(arr[i])
+    i=i+1
+  else:
+    print("3ra")
+    i=k
+    flag=False
+print(len(clasificados))

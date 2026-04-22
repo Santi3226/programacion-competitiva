@@ -1,0 +1,32 @@
+t = int(input())
+
+for _ in range(t):
+  n = int(input())
+  x = str(input())
+  s = ""
+  r = ''
+  for i in range(n):
+    if((i+1)%2==0):
+      s=s+"b"
+    else:
+      s=s+"a"
+  i=0
+  #Cambiarlo por arreglos
+  for j in range(n):
+    if(x[j]==s[i]):
+      r = r+s[i]
+      s=s[1:]
+      i=i+1
+    elif(x[j]==s[len(s)-1]):
+      r = r+s[len(s)-1]
+      s=s[n-1:]
+    elif(x[j]=="?"):
+      r = r+s[i]
+      s=s[1:]
+    else:
+      break
+  print(r,x)
+  if(r==x):
+    print("YES")
+  else:
+    print("NO")
