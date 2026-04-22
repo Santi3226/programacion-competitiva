@@ -37,4 +37,6 @@ else:
 """
 Dado un predicado monotono ordenado P (funcion que devuelve 0 y 1), quiero buscar el primer 1 y ultimo 0
 Imaginando que mi arreglo contiene un index arr[-1]==-inf y arr[n+1]==inf
+Util en problemas de buscar maximo o minimo => k(k+1)//2 >= N
 """
+
