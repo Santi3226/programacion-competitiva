@@ -1,0 +1,15 @@
+for i in range(5):
+  row = list(map(int, input().split()))
+  if(row.__contains__(1)):
+    ancho = row.index(1) + 1
+    largo = i+1
+    break
+if(ancho<3):
+  total = 3 - ancho
+else:
+  total = ancho-3
+if(largo<3):
+  total = total + 3 - largo
+else:
+  total = total + largo - 3
+print(total)

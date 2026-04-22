@@ -1,0 +1,10 @@
+n  = str(input())
+arr=[]
+#Deberia usar un hashset
+for i in range(len(n)):
+  if(not arr.__contains__(n[i])):
+    arr.append(n[i])
+if(len(arr)%2==0):
+  print("CHAT WITH HER!")
+else:
+  print("IGNORE HIM!")

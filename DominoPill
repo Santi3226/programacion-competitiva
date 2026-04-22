@@ -1,0 +1,9 @@
+arr = list(map(int, input().split()))
+ancho=arr[0]
+largo=arr[1]
+total=0
+if(ancho%2==0):
+  total = largo*(ancho//2)
+elif(ancho%2!=0):
+  total = largo*(ancho//2) + largo//2 
+print(total)

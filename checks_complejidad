@@ -1,0 +1,38 @@
+def foo1(n):
+  total = 0
+  count=0
+  for i in range(n):
+    count+=1
+    total += i
+  return total, count
+
+def foo2(n):
+  total = 0
+  count=0
+  for i in range(n):
+    for j in range(n):
+      total += i * j
+      count+=1
+  return total,count
+
+count=0
+def foo3(n):
+  global count
+  if n <= 1:
+    return 1,count
+  count+=1
+  return foo3(n // 2)
+
+count=0
+from itertools import permutations
+def foo(arr):
+  count=0
+  for p in permutations(arr):
+    #print(p)
+    count=count+1
+  print(count)
+
+#print("1) ", foo1(10)) 
+#print("2) ", foo2(10)) 
+#print("3) ", foo3(1500)) 
+print("4) ", foo([1]*8)) 

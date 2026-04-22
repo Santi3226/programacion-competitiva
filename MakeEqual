@@ -1,0 +1,15 @@
+arr = list(map(int, input().split()))
+n = arr[0]
+k = arr[1]
+arr = list(map(int, input().split()))
+cant = 0
+
+for i in range(n):
+  if(cant<k and arr[i]>=1):
+    cant=cant+1
+  elif(cant>=k):
+    if(arr[i-1]==arr[i] and arr[i]>=1):
+      cant=cant+1
+    else:
+      break
+print(cant)

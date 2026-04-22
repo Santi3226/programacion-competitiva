@@ -1,0 +1,9 @@
+n= int(input())
+total=0
+for i in range(n):
+  op=input()
+  if(op[0]=="+" or op[len(op)-1]=="+"):
+    total=total+1
+  elif(op[0]=="-" or op[len(op)-1]=="-"):
+    total=total-1
+print(total)

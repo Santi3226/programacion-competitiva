@@ -1,0 +1,10 @@
+n = int(input())
+x=0
+cant=0
+while(x!=n):
+  if(n-x>=5):
+    x=x+5
+  else:
+    x=x+n-x
+  cant=cant+1
+print(cant)
