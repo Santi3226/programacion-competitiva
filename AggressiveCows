@@ -1,0 +1,25 @@
+t=int(input())
+arr=[]
+for _ in range(t):    
+    stalls,cows = map(int, input().split())
+    for j in range(stalls):
+        arr.append(int(input()))
+
+#maximizar dist minima
+a=0
+b=arr[-1]-arr[0]+1
+#vaca 1=pos 0 -- vaca 2=pos N
+while(b-a>1):
+    c=(a+b)//2
+    count, last=1,arr[0]
+    for j in range(1,stalls):
+        if(arr[j]-last>=c):
+            count=count+1
+            last=arr[j]
+    if(count>=cows):
+        a=c
+    else:
+        b=c
+print(a)
+
+#a revisar, creo q se puede fuerza bruta igual
