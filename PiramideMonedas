@@ -1,0 +1,21 @@
+monedas = 2**31
+i=0
+while(monedas>0):
+    i=i+1
+    monedas=monedas-i
+print(i)
+
+##
+N=2**31
+a=0
+b=N+1
+
+j=0
+while(b-a>1):
+    j=j+1
+    c=(a+b)//2
+    if((c*(c+1)//2)>N):
+        b=c
+    else: 
+        a=c
+print(a,j)
