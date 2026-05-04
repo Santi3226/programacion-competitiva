@@ -1,0 +1,55 @@
+#Falla por uno en algunos casos
+
+t = int(input()) #repeticiones
+for i in range(t):
+    n,h = map(int, input().split()) #ataques y vida
+    a = list(map(int, input().split())) #cuando ataque   
+    lo=0
+    hi=h
+    while(hi-lo>1):
+        mid=(lo+hi)//2
+        vida=h
+        for j in range(len(a)):
+            if(j==len(a)-1):
+                vida=vida-mid
+                break
+            if(a[j+1]-a[j]<=mid):
+                vida=vida-(a[j+1]-a[j])
+            else:
+                vida=vida-mid
+        if(vida>0):
+            lo=mid
+        else:
+            hi=mid
+    print(mid)        
+
+
+# Refactor
+"""
+def k_mata_dragon(mid):
+    for j in range(0,len(a)-1):
+        if(j==len(a)-1):
+            vida=vida-mid
+            break
+        if(a[j+1]-a[j]<=mid):
+            vida=vida-(a[j+1]-a[j])
+        else:
+            vida=vida-mid
+    return vida>0
+
+t = int(input()) #repeticiones
+for i in range(t):
+    n,h = map(int, input().split()) #ataques y vida
+    a = list(map(int, input().split())) #cuando ataque
+    
+    lo=0
+    hi=h
+    while(lo<hi-1):
+        mid=(lo+hi)//2
+        vida=h
+        if(k_mata_dragon(mid)):
+            lo=mid
+        else:
+            hi=mid
+print(mid)
+"""
