@@ -1,0 +1,21 @@
+#Verificar predicado, pq no me dan los resultados por 1
+#Revisar indices
+t = int(input()) #repeticiones
+for i in range(t):
+    n,h = map(int, input().split()) #columnas y agua
+    a = list(map(int, input().split())) #alturas coral   
+    lo=0
+    hi=h
+    while(hi-lo>1):
+        mid=(lo+hi)//2
+        print(lo,hi,mid)
+        agua=h
+        for j in range(n):
+            if(a[j]<mid):
+                agua=agua+a[j]-mid
+        print(agua)
+        if(agua>0):
+            lo=mid
+        else:
+            hi=mid
+    print(mid)    
