@@ -1,0 +1,77 @@
+//C++
+//https://github.com/vmartinv/eldiego/blob/d19d394d5c8558767782c0edc2d87b3f7c3d5f32/eldiego.pdf
+
+/*
+    Listas
+Acceder a un indice a[i] => O(1)
+Append elemento => O(1) "amortizado"
+CRUDs => O(N) -- caro
+
+Amortizado: es O(1) hasta que se llenan los espacios en memoria del arreglo y se 
+duplica la asignacion de memoria y es O(N)
+
+
+    HashSet 
+Py: set, dict
+CRUDs=O(1)
+Elementos desordenados con clave-valor;
+Util en: has, delete duplicados, ya viste esto antes, operaciones de conjunto.
+Si me da error puede q me den test cases que fuerzan colisiones -> Usar trees
+
+En python s=set(), s.add(n), s.remove(n), s.discard(n), sin_dupes=list(set([1,2,2,3]))
+o dict={} -> dict["name"]="Santi", dict["age"]=22
+Caso particular:
+from collections import Counter -> Contador de repeticiones
+c= Counter("palabra") o c.most_common(2)
+
+C++: unordered_set, unordered_map
+#include <unordered_set> o map
+std::unordered_set<int> us;
+us.insert(n), us.erase(n) us.count(n), us.size()
+std::unordered_map<std::string, int> um;
+um.find(n), um.end(), um.begin()
+
+
+    SearchTreeSet
+C++: set, map, "turboSet oculto dificil" -- Py: sorted_containers.SortedList
+Ordenar, mins, maxs = O(logN) casi todo es LogN
+lower y upper_bound, recorrer en orden, borrar menor o mayor, CD sin desordenar,
+mayor seguridad a colisiones q unordered_map
+
+C++: #include <set o map>
+std::set<int> s = {1,4,7,10};
+s.insert(a), s.erase(a), s.count(), s.upper/lower_bound(a) primer mayor o menor de a 
+std::map<int,int> cnt; -> Multiset, es similar al counter 
+
+Py: from sortedconteiners import SortedList
+add, remove, bisect_left/right igual que los bound 
+
+    Arreglo Resizable
+vector, stack -- Py: list
+Acceder por indice o pushs
+Un stack es un array que solo admite push/pop, todo O(1) amortizado
+
+
+    LinkedList
+deque, list<T> -- Py:collections.deque
+push o pop = O(1)
+Nodos con valor-puntero al siguiente
+
+C++: #include <deque>
+dq.pushback/front, dq.popback/front
+
+Py: from collections include deque
+deque.append(), .appendleft(), .pop(), .popleft()
+
+    Heap
+Filas con elementos que tiene prioridad
+
+Py: import heapq
+.heappush(n, prioridad), .heappop(n)
+
+#include <queue>
+std::priority_queue<int> pq;
+pq.push(3),
+
+Ej: encontrar los k elementos mas grandes de una lista
+*/
