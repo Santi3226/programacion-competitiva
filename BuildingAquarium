@@ -5,17 +5,19 @@ for i in range(t):
     n,h = map(int, input().split()) #columnas y agua
     a = list(map(int, input().split())) #alturas coral   
     lo=0
-    hi=h
+    hi= max(a) + h + 1
     while(hi-lo>1):
         mid=(lo+hi)//2
-        print(lo,hi,mid)
-        agua=h
+        agua=0
         for j in range(n):
             if(a[j]<mid):
-                agua=agua+a[j]-mid
-        print(agua)
-        if(agua>0):
+                agua+= mid - a[j]   # sum(max(mid - a[j], 0))
+        if(agua<=h):
             lo=mid
         else:
             hi=mid
-    print(mid)    
+    print(lo)    
+
+#Tengo q mostrar lo, pq es el maximo h valido
+#El for de validacion de nuevo ewstaba mal
+#El hi no era suficiente
